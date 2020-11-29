@@ -5,12 +5,12 @@ Nowadays, more and more Java applications see the Spring Framework as one of the
 
 I hope this could be enlightening in a way.
 
-## Register Services without Spring
+## Setup Dubbo Services without Spring
 
 ### Provider
 
 ```java
-/* register AccountService provider */
+/* setup AccountService provider */
 DubboBootstrap bootstrap = DubboBootstrap.getInstance();
 ServiceConfig<AccountService> service = new ServiceConfig<>();
 service.setInterface(AccountService.class);
@@ -26,13 +26,15 @@ bootstrap.start();
 ### Consumer
 
 ```java
-/* initialize application & registry configuration */
+/* setup application & registry configuration */
 DubboBootstrap bootstrap = DubboBootstrap.getInstance();
 bootstrap.application(new ApplicationConfig("IndentService"));
 bootstrap.registry(new RegistryConfig(ZooKeeperConstant.zkServers));
-/* initialize AccountService consumer instance */
+
+/* setup AccountService consumer instance */
 accountService = DubboTool.getInstance(AccountService.class, bootstrap);
-/* initialize MerchandiseService consumer instance */
+
+/* setup MerchandiseService consumer instance */
 merchandiseService = DubboTool.getInstance(MerchandiseService.class, bootstrap);
 ```
 
