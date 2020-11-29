@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class MerchandiseApplication {
     public static void main(String[] args) throws InterruptedException {
-        /* register MerchandiseService provider */
+        /* setup MerchandiseService provider */
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         ApplicationConfig application = new ApplicationConfig("merchandise-service");
         application.setQosPort(22222);
@@ -26,6 +26,7 @@ public class MerchandiseApplication {
         service.setRef(new MerchandiseServiceImpl());
         bootstrap.service(service);
         bootstrap.start();
+
         /* in order for the program to run continuously */
         new CountDownLatch(1).await();
     }

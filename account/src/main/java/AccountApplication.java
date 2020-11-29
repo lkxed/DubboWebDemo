@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class AccountApplication {
     public static void main(String[] args) throws InterruptedException {
-        /* register AccountService provider */
+        /* setup AccountService provider */
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         ServiceConfig<AccountService> service = new ServiceConfig<>();
         service.setInterface(AccountService.class);

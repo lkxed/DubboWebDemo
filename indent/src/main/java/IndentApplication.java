@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class IndentApplication {
     public static void main(String[] args) throws InterruptedException {
-        /* register IndentService provider */
+        /* setup IndentService provider */
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         ApplicationConfig application = new ApplicationConfig("indent-service");
         application.setQosPort(22223);
@@ -26,6 +26,7 @@ public class IndentApplication {
         service.setRef(new IndentServiceImpl());
         bootstrap.service(service);
         bootstrap.start();
+
         /* in order for the program to run continuously */
         new CountDownLatch(1).await();
     }

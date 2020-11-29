@@ -25,11 +25,14 @@ public class BusinessService {
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         bootstrap.application(new ApplicationConfig("IndentService"));
         bootstrap.registry(new RegistryConfig(ZooKeeperConstant.zkServers));
-        /* initialize AccountService consumer instance */
+
+        /* setup AccountService consumer instance */
         accountService = DubboTool.getInstance(AccountService.class, bootstrap);
-        /* initialize MerchandiseService consumer instance */
+
+        /* setup MerchandiseService consumer instance */
         merchandiseService = DubboTool.getInstance(MerchandiseService.class, bootstrap);
-        /* initialize IndentService consumer instance */
+
+        /* setup IndentService consumer instance */
         indentService = DubboTool.getInstance(IndentService.class, bootstrap);
     }
 

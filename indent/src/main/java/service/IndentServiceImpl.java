@@ -28,13 +28,15 @@ public class IndentServiceImpl implements IndentService {
         pool = new MySQLConnectionPool("jdbc:mysql://localhost:3306/dubbo_web_demo?useSSL=false",
                 "root", "123456", 4);
         pool.initialize();
-        /* initialize application & registry configuration */
+        /* setup application & registry configuration */
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         bootstrap.application(new ApplicationConfig("IndentService"));
         bootstrap.registry(new RegistryConfig(ZooKeeperConstant.zkServers));
-        /* initialize AccountService consumer instance */
+
+        /* setup AccountService consumer instance */
         accountService = DubboTool.getInstance(AccountService.class, bootstrap);
-        /* initialize MerchandiseService consumer instance */
+
+        /* setup MerchandiseService consumer instance */
         merchandiseService = DubboTool.getInstance(MerchandiseService.class, bootstrap);
     }
 
