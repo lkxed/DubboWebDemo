@@ -1,5 +1,6 @@
 # dubbo-web-demo
 A web application with Dubbo as RPC framework &amp; ZooKeeper as its registry center yet without Spring.
+
 Nowadays, more and more Java applications see the Spring Framework as one of their must-depend libraries. The framework itself claims to be lightweight while sometimes our applications ought to be lighte, by "lighter" I mean "without it". Thus, I write this demo to explore the world without Spring which might be a better place, especially when each microservice is too simple to be wear that "light" armor. 
 
 I hope this could be enlightening in a way.
