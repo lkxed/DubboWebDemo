@@ -7,7 +7,7 @@ I hope this could be enlightening in a way.
 
 ## Register Services without Spring
 
-### Register Provider
+### Provider
 
 ```java
 /* register AccountService provider */
@@ -23,7 +23,7 @@ bootstrap.protocol(new ProtocolConfig("dubbo", 20881));
 bootstrap.service(service);
 bootstrap.start();
 ```
-### Register Consumer
+### Consumer
 
 ```java
 /* initialize application & registry configuration */
