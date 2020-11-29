@@ -1,0 +1,1 @@
+create table indent(id int primary key auto_increment, account_id int not null, merchandise_id int not null, number int not null default 1, sales double not null, create_time timestamp not null default current_timestamp);
